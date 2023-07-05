@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.contenedor-productos{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+}
+
+.card{
+    width: 20%;
+    height: auto;
+    background-color: rgb(247, 247, 247);
+}
+
+@font-face {
+    font-family: "Text";
+    src: url(./assets/Text.otf);
+}
+
+h3{
+    font-family: Text;
+    font-size: 14px;
+}
+p{
+    font-family: "Text";
+    color: rgb(94, 93, 93);
+}
+
+.contenedor-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info{
+    width: 70%;
+}
+.contenedor-info button{
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 50%;
+    border: 2px solid black;
+    color: rgb(0, 0, 0);
+}   
+button:hover{
+    cursor: pointer;
+}
+button:active{
+    transform: scale(0.9);
+}
+
+
+img{
+    width: 100%;
+}
