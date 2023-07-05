@@ -1,36 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
-import axios from 'axios'
-
 
 function App() {
-  const [dato, setDato] = useState(null);
-
+  const [poke, setPoke] = useState("")
   const api = () => {
     let n = Math.round(Math.random() * 1100)
     fetch(`https://pokeapi.co/api/v2/pokemon/${n}/`)
       .then((response) => response.json())
-      .then((data) => {
-        setDato(data)
-        console.log(dato);
-      })
-      .catch((error) => {
-        console.error('Error fetching data: ', error);
+      .then((response) => {
+        setPoke(response)
       })
   }
 
-  useEffect(() => {
-    api()}, [])
 
-return (
-  <>
-    <div className='card'>
-      <img src="" alt="" />
-      <h1></h1>
-      <h2></h2>
-    </div>
-  </>
-)
+  useEffect(() => {
+    api()
+  }, [])
+  console.log(poke);
+
+  return (
+    <>
+      <div className='card'>
+        <h3>Name: {poke.name}</h3>
+        <h3>Number: {poke.id}</h3>
+        <button onClick={() => { api() }}>Cargar nuevo pokemon</button>
+      </div>
+    </>
+  )
 }
 
 export default App
